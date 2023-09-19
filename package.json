@@ -10,13 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@mantine/core": "^6.0.20",
-    "@mantine/form": "^6.0.20",
-    "@mantine/hooks": "^6.0.20",
-    "@mantine/modals": "^6.0.20",
-    "@mantine/notifications": "^6.0.20",
-    "@mantine/spotlight": "^6.0.20",
+    "@mantine/core": "^7.0.0",
+    "@mantine/form": "^7.0.0",
+    "@mantine/hooks": "^7.0.0",
+    "@mantine/modals": "^7.0.0",
+    "@mantine/notifications": "^7.0.0",
+    "@mantine/spotlight": "^7.0.0",
     "@nanostores/react": "^0.7.1",
     "@supabase/supabase-js": "^2.33.2",
     "@tabler/icons-react": "^2.34.0",
@@ -26,7 +25,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0",
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
@@ -37,6 +37,9 @@
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.30",
+    "postcss-preset-mantine": "^1.7.0",
+    "postcss-simple-vars": "^7.0.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }

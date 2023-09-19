@@ -1,24 +1,49 @@
-import type { SpotlightAction } from "@mantine/spotlight";
+import { rem } from "@mantine/core";
 import { IconDashboard, IconFileText, IconHome } from "@tabler/icons-react";
 
-export const spotlightActions: SpotlightAction[] = [
+const Spotlightactions: SpotlightActionData[] = [
   {
-    title: "Home",
+    id: "home",
+    label: "Home",
     description: "Get to home page",
-
-    onTrigger: () => console.log("Home"),
-    icon: <IconHome size="1.2rem" />,
+    onClick: () => console.log("Home"),
+    leftSection: (
+      <IconHome style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
+    ),
   },
   {
-    title: "Dashboard",
+    id: "dashboard",
+    label: "Dashboard",
     description: "Get full information about current system status",
-    onTrigger: () => console.log("Dashboard"),
-    icon: <IconDashboard size="1.2rem" />,
+    onClick: () => console.log("Dashboard"),
+    leftSection: (
+      <IconDashboard style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
+    ),
   },
   {
-    title: "Documentation",
+    id: "documentation",
+    label: "Documentation",
     description: "Visit documentation to lean more about all features",
-    onTrigger: () => console.log("Documentation"),
-    icon: <IconFileText size="1.2rem" />,
+    onClick: () => console.log("Documentation"),
+    leftSection: (
+      <IconFileText style={{ width: rem(24), height: rem(24) }} stroke={1.5} />
+    ),
   },
 ];
+
+// core styles are required for all packages
+import { IconSearch } from "@tabler/icons-react";
+import { Spotlight, SpotlightActionData } from "@mantine/spotlight";
+export const CustomSpotlight = () => (
+  <Spotlight
+    actions={Spotlightactions}
+    nothingFound="Nothing found..."
+    highlightQuery
+    searchProps={{
+      leftSection: (
+        <IconSearch style={{ width: rem(20), height: rem(20) }} stroke={1.5} />
+      ),
+      placeholder: "Search...",
+    }}
+  />
+);

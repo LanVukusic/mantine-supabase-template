@@ -1,26 +1,26 @@
+import { useStore } from "@nanostores/react";
 import { User } from "@supabase/supabase-js";
 import { PropsWithChildren, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { $currUser } from "../global-state/user";
-import { useStore } from "@nanostores/react";
 
 interface ProtectedPathProps extends PropsWithChildren {
   redirectUrl: string;
-  validator?: (arg0: User | null) => boolean;
+  shouldRedirect?: (arg0: User | null) => boolean;
 }
 
 export const ProtectedPath = ({
   children,
   redirectUrl,
-  validator,
+  shouldRedirect,
 }: ProtectedPathProps) => {
   const user = useStore($currUser);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (validator) {
+    if (shouldRedirect) {
       // use custom validation function
-      if (validator(user)) {
+      if (shouldRedirect(user)) {
         navigate(redirectUrl);
       }
     } else {
@@ -28,7 +28,7 @@ export const ProtectedPath = ({
         navigate(redirectUrl);
       }
     }
-  }, [user, validator, navigate, redirectUrl]);
+  }, [user, shouldRedirect, navigate, redirectUrl]);
 
-  return <>{user != null && children}</>;
+  return <>{children}</>;
 };

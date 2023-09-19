@@ -1,4 +1,4 @@
-import { Link, createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import App from "./views/Hello";
 import { Authentication } from "./views/Auth";
 import { ProtectedPath } from "../components/ProtectedPath";
@@ -17,16 +17,12 @@ export const router = createBrowserRouter([
     element: (
       <ProtectedPath
         redirectUrl="/"
-        validator={(user) => {
+        shouldRedirect={(user) => {
           return user != null;
         }}
       >
-        <Authentication />,
+        <Authentication />
       </ProtectedPath>
     ),
-  },
-  {
-    path: "/test",
-    element: <Link to="/"> back home</Link>,
   },
 ]);
