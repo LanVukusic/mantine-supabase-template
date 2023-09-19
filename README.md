@@ -1,27 +1,13 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Supabase + Mantine 7.0.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This example offers an opinionated starter preset for making web apps using a stack of my favourite technologies.
 
-Currently, two official plugins are available:
+I believe that using this preset one can spin up a simple application in a very short time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technology
 
-## Expanding the ESLint configuration
+Preset uses the `yarn create vite` template using vite with `typescript + SWC`.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Big part of this template is the [Mantine](https://mantine.dev/) component library. I know there are many options, but after trying a lot of them, i found that Mantine suits me the most.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+I use [Nanostores](https://github.com/nanostores/nanostores) for global state (think, better Redux). It gives me everything i need 99% of the time. It has a nice syntax and nice React integration.

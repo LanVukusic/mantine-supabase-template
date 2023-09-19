@@ -1,4 +1,4 @@
-import { Badge, Button, Group, Paper, Stack } from "@mantine/core";
+import { Badge, Button, Group, Paper, Stack, Text } from "@mantine/core";
 import { openTypedModal } from "../../mantine/modals/modals-utils";
 import { notifications } from "@mantine/notifications";
 import { spotlight } from "@mantine/spotlight";
@@ -13,8 +13,32 @@ function App() {
     <Stack>
       <Paper p="xl">
         <Group>
+          <Paper
+            withBorder
+            shadow="lg"
+            p="md"
+            style={{
+              cursor: "pointer",
+            }}
+            onClick={() => {
+              window.location.replace("https://supabase.com/");
+            }}
+          >
+            <Group>
+              <img
+                style={{
+                  width: "100px",
+                }}
+                src="https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png"
+              />
+              <Text size="xl" c="dimmed">
+                Built with supabase
+              </Text>
+            </Group>
+          </Paper>
           <Stack>
             <Badge variant="light">{user?.id}</Badge>
+
             <Button
               onClick={() => {
                 supabaseClient.auth.signOut();
