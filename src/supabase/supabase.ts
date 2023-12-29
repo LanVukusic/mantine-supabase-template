@@ -13,6 +13,12 @@ const options = {
   //   headers: { "x-my-custom-header": "my-app-name" },
   // },
 };
+if (
+  !import.meta.env.VITE_SUPABASE_URL ||
+  !import.meta.env.VITE_SUPABASE_ANON_KEY
+) {
+  throw new Error("No environment is setup");
+}
 export const supabaseClient = createClient(
   import.meta.env.VITE_SUPABASE_URL,
   import.meta.env.VITE_SUPABASE_ANON_KEY,
