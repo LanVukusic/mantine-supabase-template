@@ -1,10 +1,10 @@
 import { Badge, Button, Group, Paper, Stack, Text } from "@mantine/core";
-import { openTypedModal } from "../../mantine/modals/modals-utils";
+import { openTypedModal } from "../mantine/modals/modals-utils";
 import { notifications } from "@mantine/notifications";
 import { spotlight } from "@mantine/spotlight";
 import { useStore } from "@nanostores/react";
-import { $currUser } from "../../global-state/user";
-import { supabaseClient } from "../../supabase/supabase";
+import { $currUser } from "../global-state/user";
+import { supabaseClient } from "../supabase/supabase";
 
 function App() {
   const user = useStore($currUser);

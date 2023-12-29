@@ -12,7 +12,7 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconCircleKey } from "@tabler/icons-react";
-import { supabaseClient } from "../../supabase/supabase";
+import { supabaseClient } from "../supabase/supabase";
 
 export function Authentication() {
   const form = useForm({
@@ -31,10 +31,10 @@ export function Authentication() {
       <Center h="100vh" w="100%">
         <Container size={620} miw={440}>
           <Group align="baseline">
-            <Text color="dimmed">
+            <Text c="dimmed">
               <IconCircleKey></IconCircleKey>
             </Text>
-            <Title align="center">Login</Title>
+            <Title>Login</Title>
           </Group>
 
           <Paper withBorder shadow="md" p={30} mt={30} radius="md">
