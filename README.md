@@ -22,3 +22,8 @@ I use [Nanostores](https://github.com/nanostores/nanostores) for global state (t
 ### usage
 
 `yarn typegens`
+
+## Prettier
+
+Is installed as a dev dependency and `.vscode` recommends installing it as an editor plugin.  
+Format on save is enabled for a reason. Dont write ugly code.  
