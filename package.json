@@ -11,12 +11,12 @@
     "typegen": "npx supabase gen types typescript --linked > src/supabase/supabase.ts"
   },
   "dependencies": {
-    "@mantine/core": "^7.3.2",
-    "@mantine/form": "^7.3.2",
-    "@mantine/hooks": "^7.3.2",
-    "@mantine/modals": "^7.3.2",
-    "@mantine/notifications": "^7.3.2",
-    "@mantine/spotlight": "^7.3.2",
+    "@mantine/core": "^7.5.2",
+    "@mantine/form": "^7.5.2",
+    "@mantine/hooks": "^7.5.2",
+    "@mantine/modals": "^7.5.2",
+    "@mantine/notifications": "^7.5.2",
+    "@mantine/spotlight": "^7.5.2",
     "@nanostores/react": "^0.7.1",
     "@supabase/supabase-js": "^2.33.2",
     "@tabler/icons-react": "^2.34.0",
