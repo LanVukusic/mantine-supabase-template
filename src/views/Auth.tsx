@@ -12,7 +12,9 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { IconCircleKey } from "@tabler/icons-react";
-import { supabaseClient } from "../supabase/supabase";
+import { supabaseClient } from "../supabase/supabaseClient";
+import { useUser } from "../supabase/loader";
+import { Navigate } from "react-router-dom";
 
 export function Authentication() {
   const form = useForm({
@@ -25,6 +27,12 @@ export function Authentication() {
       email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
     },
   });
+
+  // redirect if logged in
+  const { user } = useUser();
+  if (user) {
+    return <Navigate to="/"></Navigate>;
+  }
 
   return (
     <Box h="100vh" w="100vw">

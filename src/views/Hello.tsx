@@ -4,7 +4,7 @@ import { notifications } from "@mantine/notifications";
 import { spotlight } from "@mantine/spotlight";
 import { useStore } from "@nanostores/react";
 import { $currUser } from "../global-state/user";
-import { supabaseClient } from "../supabase/supabase";
+import { supabaseClient } from "../supabase/supabaseClient";
 
 function App() {
   const user = useStore($currUser);

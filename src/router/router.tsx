@@ -14,15 +14,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "/auth",
-    element: (
-      <ProtectedPath
-        redirectUrl="/"
-        shouldRedirect={(user) => {
-          return user != null;
-        }}
-      >
-        <Authentication />
-      </ProtectedPath>
-    ),
+    element: <Authentication />,
   },
 ]);
