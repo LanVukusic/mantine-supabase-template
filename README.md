@@ -11,3 +11,14 @@ Preset uses the `yarn create vite` template using vite with `typescript + SWC`.
 Big part of this template is the [Mantine](https://mantine.dev/) component library. I know there are many options, but after trying a lot of them, i found that Mantine suits me the most.
 
 I use [Nanostores](https://github.com/nanostores/nanostores) for global state (think, better Redux). It gives me everything i need 99% of the time. It has a nice syntax and nice React integration.
+
+## Autotyping with upabase
+
+### setup
+
+`npx supabase login` to login to your project
+`npx supabase link` link your supabase project
+
+### usage
+
+`yarn typegens`
