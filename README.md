@@ -4,6 +4,18 @@ Opinionated and ready to go tempalte, for when you need to bootstrap an app in a
 
 This example offers an opinionated starter preset for making web apps using a simple sensible technology stack.
 
+## Features
+
+Template comes with out of the box configured:
+
+- [Client side router](https://reactrouter.com/en/main)
+- [Mantine theming](https://mantine.dev/theming/mantine-provider/)
+- [Supabase database](https://supabase.com/database)
+- [Supabase auth](https://supabase.com/auth) with ready made login and register forms
+- [Automatic type gen](https://supabase.com/docs/reference/javascript/typescript-support)
+- [Spotlight, modals, forms and notifications from mantine](https://mantine.dev)
+- [Nanostores - Global state](https://github.com/nanostores/nanostores)
+
 ## Technology
 
 Preset uses the `yarn create vite` template using vite with `typescript + SWC`.
