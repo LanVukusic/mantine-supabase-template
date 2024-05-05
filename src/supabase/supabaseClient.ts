@@ -1,5 +1,5 @@
-import { createClient } from "@supabase/supabase-js";
-import { Database } from "./supabase";
+import { createClient } from '@supabase/supabase-js';
+import { Database } from './supabase';
 
 const options = {
   auth: {
@@ -12,5 +12,5 @@ const options = {
 export const supabaseClient = createClient<Database>(
   import.meta.env.VITE_SUPABASE_URL,
   import.meta.env.VITE_SUPABASE_ANON_KEY,
-  options
+  options,
 );
