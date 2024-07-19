@@ -1,4 +1,3 @@
 export type Database = undefined;
 
-// THIS WILL BE REPLACED BY RUNNING
-// yarn typegen
+// THIS WILL BE REPLACED BY RUNNING 'yarn typegen''
