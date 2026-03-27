@@ -18,8 +18,8 @@
     "@mantine/notifications": "^8.3.18",
     "@mantine/spotlight": "^8.3.18",
     "@nanostores/react": "^1.1.0",
-    "@supabase/supabase-js": "^2.100.0",
-    "@tabler/icons-react": "^3.40.0",
+    "@supabase/supabase-js": "^2.100.1",
+    "@tabler/icons-react": "^3.41.0",
     "localforage": "^1.10.0",
     "match-sorter": "^8.2.0",
     "nanostores": "^1.2.0",
@@ -44,7 +44,7 @@
     "postcss-simple-vars": "^7.0.1",
     "prettier": "^3.8.1",
     "typescript": "^6.0.2",
-    "vite": "^8.0.2"
+    "vite": "^8.0.3"
   },
   "prettier": {
     "trailingComma": "all",
