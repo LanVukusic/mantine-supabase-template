@@ -1,7 +1,7 @@
 {
   "name": "mantine-supabase-template",
   "private": true,
-  "version": "0.0.0",
+  "version": "9.4.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
