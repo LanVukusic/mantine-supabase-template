@@ -37,10 +37,10 @@ Create fully type safe endpoints by running `yarn typegen`.
 
 `yarn typegen`
 
-## Prettier
+## Oxc toolchain
 
-Is installed as a dev dependency and `.vscode` recommends installing it as an editor plugin.  
-Format on save is enabled for a reason. Dont write ugly code.  
+[Oxlint](https://oxc.rs/docs/guide/usage/linter.html) is used for linting and [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html) for formatting. Both are installed as dev dependencies and `.vscode` recommends installing the official Oxc editor plugin.  
+Format on save is enabled for a reason. Dont write ugly code.
 
 ## Supabase credentials are stored in .env
 

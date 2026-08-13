@@ -1,9 +1,8 @@
 import { mutate } from 'swr';
+
 import { Database } from '../supabase';
 
-export type TableName =
-  | keyof Database['public']['Tables']
-  | keyof Database['public']['Views'];
+export type TableName = keyof Database['public']['Tables'] | keyof Database['public']['Views'];
 
 /**
  * Refetch or invalidate SWR cache for one or more tables.

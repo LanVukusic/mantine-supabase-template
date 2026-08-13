@@ -1,11 +1,7 @@
 import { Badge, Button, Stack } from '@mantine/core';
 import { ContextModalProps } from '@mantine/modals';
 
-export const Test = ({
-  context,
-  id,
-  innerProps,
-}: ContextModalProps<{ modalBody: string }>) => {
+export const Test = ({ context, id, innerProps }: ContextModalProps<{ modalBody: string }>) => {
   return (
     <Stack>
       {innerProps.modalBody}

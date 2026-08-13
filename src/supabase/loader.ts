@@ -1,8 +1,9 @@
-import { notifications } from "@mantine/notifications";
-import { supabaseClient } from "./supabaseClient";
-import { redirect } from "react-router-dom";
-import { User } from "@supabase/supabase-js";
-import { useState, useEffect } from "react";
+import { notifications } from '@mantine/notifications';
+import { User } from '@supabase/supabase-js';
+import { useState, useEffect } from 'react';
+import { redirect } from 'react-router-dom';
+
+import { supabaseClient } from './supabaseClient';
 
 export async function protectedPathLoader() {
   const user = await supabaseClient.auth.getUser();
@@ -10,13 +11,13 @@ export async function protectedPathLoader() {
     notifications.show({
       title: user.error.name,
       message: user.error.message,
-      color: "red",
+      color: 'red',
     });
     return null;
   }
 
   if (!user.data.user) {
-    redirect("/auth");
+    redirect('/auth');
   }
   return null;
 }
@@ -35,10 +36,10 @@ export const useUser = () => {
 
   useEffect(() => {
     supabaseClient.auth.onAuthStateChange((event, session) => {
-      if (event === "SIGNED_IN") {
+      if (event === 'SIGNED_IN') {
         setUser(session?.user);
       }
-      if (event === "SIGNED_OUT") {
+      if (event === 'SIGNED_OUT') {
         setUser(undefined);
       }
       setLoading(false);

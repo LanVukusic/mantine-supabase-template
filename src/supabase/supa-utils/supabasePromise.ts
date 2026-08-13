@@ -3,6 +3,7 @@ import {
   PostgrestSingleResponse,
   PostgrestMaybeSingleResponse,
 } from '@supabase/supabase-js';
+
 import { AnyResponse, Success } from './typeUtils';
 
 export function toSupabasePromise<T>(
@@ -15,9 +16,7 @@ export function toSupabasePromise<T>(
   prom: PromiseLike<PostgrestMaybeSingleResponse<T>>,
 ): Promise<Success<T | null>>;
 
-export function toSupabasePromise<T>(
-  prom: PromiseLike<AnyResponse<T>>,
-): Promise<any> {
+export function toSupabasePromise<T>(prom: PromiseLike<AnyResponse<T>>): Promise<any> {
   return new Promise((resolve, reject) => {
     prom.then((response) => {
       if (response.error) {

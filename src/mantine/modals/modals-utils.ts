@@ -1,11 +1,12 @@
-import { openContextModal } from "@mantine/modals";
-import { mantineModals } from "./modals";
+import { openContextModal } from '@mantine/modals';
+
+import { mantineModals } from './modals';
 
 export type ModalKeys = keyof typeof mantineModals;
 type ReactComponentTypeFromKey<T extends ModalKeys> = (typeof mantineModals)[T];
 type ModalProps<T extends ModalKeys> = React.ComponentProps<
   ReactComponentTypeFromKey<T>
->["innerProps"];
+>['innerProps'];
 
 type ModalDataInput<T extends ModalKeys> = {
   modal: T;

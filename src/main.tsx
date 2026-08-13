@@ -1,19 +1,20 @@
-import { MantineProvider } from "@mantine/core";
-import { ModalsProvider } from "@mantine/modals";
-import { Notifications } from "@mantine/notifications";
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
-import { mantineModals } from "./mantine/modals/modals.tsx";
-import { mantineTheme } from "./mantine/theme.ts";
-import { router } from "./router/router.tsx";
+import { MantineProvider } from '@mantine/core';
+import { ModalsProvider } from '@mantine/modals';
+import { Notifications } from '@mantine/notifications';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
 
-import "@mantine/core/styles.css";
-import "@mantine/notifications/styles.css";
-import "@mantine/spotlight/styles.css";
-import { CustomSpotlight } from "./mantine/spotlight.tsx";
+import { mantineModals } from './mantine/modals/modals.tsx';
+import { CustomSpotlight } from './mantine/spotlight.tsx';
+import { mantineTheme } from './mantine/theme.ts';
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
+import '@mantine/spotlight/styles.css';
+import { router } from './router/router.tsx';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <MantineProvider theme={mantineTheme}>
       <Notifications />
@@ -22,5 +23,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <RouterProvider router={router} />
       </ModalsProvider>
     </MantineProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

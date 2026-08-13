@@ -27,8 +27,8 @@ export const Welcome = () => {
         <div>
           <Text fw={700}>Global State (Nanostores)</Text>
           <Text size="sm">
-            Store defined at <Code>src/global-state/user.ts</Code> using
-            nanostores <Code>atom()</Code>.
+            Store defined at <Code>src/global-state/user.ts</Code> using nanostores{' '}
+            <Code>atom()</Code>.
           </Text>
           <Text size="sm">
             Read: <Code>{'const user = useStore($currUser)'}</Code>
@@ -40,15 +40,15 @@ export const Welcome = () => {
         <div>
           <Text fw={700}>SWR Data Fetching (useSupaWR)</Text>
           <Text size="sm">
-            Wrapper at <Code>src/supabase/supa-utils/supaSWR.ts</Code>. Fetch
-            data in any component with auto-caching and revalidation:
+            Wrapper at <Code>src/supabase/supa-utils/supaSWR.ts</Code>. Fetch data in any component
+            with auto-caching and revalidation:
           </Text>
           <Code block>
-            {`import { getSupaWR } from '../../supabase/supa-utils/supaSWR';
+            {`import { useSupaWR } from '../../supabase/supa-utils/supaSWR';
 import { supabaseClient } from '../../supabase/supabaseClient';
 
 const ProfileList = () => {
-  const { data, error, isLoading } = getSupaWR({
+  const { data, error, isLoading } = useSupaWR({
     table: 'profiles',
     query: () =>
       supabaseClient.from('profiles').select('*'),
@@ -61,8 +61,7 @@ const ProfileList = () => {
 };`}
           </Code>
           <Text size="sm" mt="xs">
-            After a mutation, invalidate the cache with{' '}
-            <Code>refetchTables</Code> from{' '}
+            After a mutation, invalidate the cache with <Code>refetchTables</Code> from{' '}
             <Code>src/supabase/supa-utils/supaSWRCache.ts</Code>:
           </Text>
           <Code block>

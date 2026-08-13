@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
+
 import { ProtectedPath } from '../components/ProtectedPath';
 import { Authentication } from '../views/Auth';
 import App from '../views/Main/App';
