@@ -2,7 +2,9 @@ import { mutate } from 'swr';
 
 import { Database } from '../supabase';
 
-export type TableName = keyof Database['public']['Tables'] | keyof Database['public']['Views'];
+export type TableName = Database extends { public: { Tables: Record<string, unknown>; Views: Record<string, unknown> } }
+  ? keyof Database['public']['Tables'] | keyof Database['public']['Views']
+  : string;
 
 /**
  * Refetch or invalidate SWR cache for one or more tables.

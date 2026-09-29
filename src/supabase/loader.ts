@@ -23,27 +23,32 @@ export async function protectedPathLoader() {
 }
 
 export const useUser = () => {
-  const [user, setUser] = useState<User>();
+  const [user, setUser] = useState<User | undefined>(undefined);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    supabaseClient.auth.getUser().then((user) => {
-      setUser(user.data?.user || undefined);
+    let cancelled = false;
+
+    supabaseClient.auth.getUser().then(({ data }) => {
+      if (cancelled) return;
+      setUser(data?.user ?? undefined);
       setLoading(false);
     });
-  }, []);
 
-  useEffect(() => {
-    supabaseClient.auth.onAuthStateChange((event, session) => {
+    const { data: listener } = supabaseClient.auth.onAuthStateChange((event, session) => {
       if (event === 'SIGNED_IN') {
-        setUser(session?.user);
+        setUser(session?.user ?? undefined);
       }
       if (event === 'SIGNED_OUT') {
         setUser(undefined);
       }
       setLoading(false);
     });
+
+    return () => {
+      cancelled = true;
+      listener.subscription.unsubscribe();
+    };
   }, []);
 
   return { user, loading };

@@ -10,8 +10,10 @@ import { toSupabasePromise } from './supabasePromise';
 import { AnyResponse } from './typeUtils';
 
 // Type-safe table name from Database type
-// Type-safe table name from Database type
-type TableName = keyof Database['public']['Tables'] | keyof Database['public']['Views'];
+type DbPublic = Database extends { public: { Tables: infer _T; Views: infer _V } }
+  ? Database['public']
+  : { Tables: Record<string, unknown>; Views: Record<string, unknown> };
+type TableName = keyof DbPublic['Tables'] | keyof DbPublic['Views'];
 
 export type TableNames = TableName | TableName[];
 
